@@ -2,15 +2,24 @@ plugins {
     id 'java'
 }
 
-group 'com.linfq'
+group 'com.linfq.learn'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
 repositories {
+    // 阿里云仓库
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/spring/'}
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // hadoop
+    compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '2.7.3'
+    compile group: 'org.apache.hadoop', name: 'hadoop-hdfs', version: '2.7.3'
+
 }
