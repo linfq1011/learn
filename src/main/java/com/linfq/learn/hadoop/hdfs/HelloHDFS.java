@@ -1,12 +1,9 @@
 package com.linfq.learn.hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IOUtils;
-
-import java.io.FileInputStream;
 
 /**
  * HelloHDFS.
@@ -33,6 +30,7 @@ public class HelloHDFS {
 		// FileSystem
 		Configuration conf = new Configuration();
 		conf.set("fs.default.name", "hdfs://hadoop-master:9000");
+//		conf.set("dfs.replication", "5");
 		FileSystem fileSystem = FileSystem.get(conf);
 
 		/// FileSystem创建/删除/判断目录
@@ -50,9 +48,33 @@ public class HelloHDFS {
 		System.out.println(success);*/
 
 		// 上传windows文件到hdfs
-		FileInputStream fis = new FileInputStream("D:/settings.xml");
+		/*FileInputStream fis = new FileInputStream("D:/settings.xml");
 		FSDataOutputStream out = fileSystem.create(new Path("/test.data"), true);
-		IOUtils.copyBytes(fis, out, 4096, true);
+		IOUtils.copyBytes(fis, out, 4096, true);*/
+
+		// 原始方式上传，可以实现上传进度
+		/*FileInputStream fis = new FileInputStream("D:/settings.xml");
+		FSDataOutputStream out = fileSystem.create(new Path("/test.data"), true);
+		byte[] buf = new byte[4096];
+		int len = fis.read(buf);
+		while (len != -1) {
+			out.write(buf, 0, len);
+			len = fis.read(buf);
+		}
+		fis.close();
+		out.close();*/
+
+		// 列举目录下的信息
+		FileStatus[] statuses = fileSystem.listStatus(new Path("/"));
+		System.out.println(statuses.length);
+		for (FileStatus status : statuses) {
+			// 文件路径
+			System.out.println(status.getPath());
+			// 权限信息
+			System.out.println(status.getPermission());
+			// 备份数量
+			System.out.println(status.getReplication());
+		}
 
 	}
 }
