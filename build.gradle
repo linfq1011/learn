@@ -19,7 +19,17 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
     // hadoop
+    // hdfs
     compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '2.7.3'
     compile group: 'org.apache.hadoop', name: 'hadoop-hdfs', version: '2.7.3'
+
+    // mapreduce
+    compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: '2.7.3'
+    compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-common', version: '2.7.3'
+
+    // yarn
+    compile group: 'org.apache.hadoop', name: 'hadoop-yarn-common', version: '2.7.3'
+
+
 
 }

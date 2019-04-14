@@ -15,7 +15,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 /**
- * HdfsUtils.
+ * hdfs工具类.
  *
  * @author linfq
  * @date 2019/4/10 22:24
