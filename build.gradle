@@ -22,13 +22,16 @@ dependencies {
     // hdfs
     compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '2.7.3'
     compile group: 'org.apache.hadoop', name: 'hadoop-hdfs', version: '2.7.3'
-
     // mapreduce
     compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: '2.7.3'
     compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-common', version: '2.7.3'
-
     // yarn
     compile group: 'org.apache.hadoop', name: 'hadoop-yarn-common', version: '2.7.3'
+
+
+    // netty
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.25.Final'
+
 
 
 
