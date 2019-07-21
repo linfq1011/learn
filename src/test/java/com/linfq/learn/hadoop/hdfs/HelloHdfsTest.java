@@ -91,7 +91,7 @@ public class HelloHdfsTest {
 		FileSystem fileSystem = this.getFileSystem();
 		// 上传windows文件到hdfs
 		FileInputStream fis = new FileInputStream("E:\\Program Files\\hadoop-2.7.3\\etc\\hadoop\\core-site.xml");
-		FSDataOutputStream out = fileSystem.create(new Path("/test.data"), true);
+		FSDataOutputStream out = fileSystem.create(new Path("/test1.data"), true);
 		IOUtils.copyBytes(fis, out, 4096, true);
 	}
 
@@ -103,7 +103,7 @@ public class HelloHdfsTest {
 		FileSystem fileSystem = this.getFileSystem();
 		// 原始方式上传，可以实现上传进度
 		FileInputStream fis = new FileInputStream("D:\\.m2\\settings.xml");
-		FSDataOutputStream out = fileSystem.create(new Path("/test.data"), true);
+		FSDataOutputStream out = fileSystem.create(new Path("/test2.data"), true);
 		byte[] buf = new byte[4096];
 		int len = fis.read(buf);
 		while (len != -1) {
