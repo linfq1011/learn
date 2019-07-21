@@ -16,6 +16,7 @@ import io.netty.util.CharsetUtil;
 
 /**
  * 自定义助手类.
+ * <p/>
  * <code>SimpleChannelInboundHandler</code>：对于请求来讲，其实相当于[入站，入境]
  *
  * @author linfq
