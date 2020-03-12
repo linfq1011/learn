@@ -6,6 +6,10 @@ group 'com.linfq.learn'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
 
 repositories {
     // 阿里云仓库
