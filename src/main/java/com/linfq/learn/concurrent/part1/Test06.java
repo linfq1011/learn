@@ -31,6 +31,7 @@ public class Test06 {
 		Test06 test06 = new Test06();
 
 		new Thread(() -> test06.m1(), "t1").start();
-		new Thread(() -> test06.m2(), "t2").start();
+//		new Thread(() -> test06.m2(), "t2").start();
+		new Thread(test06::m2, "t1").start();
 	}
 }
