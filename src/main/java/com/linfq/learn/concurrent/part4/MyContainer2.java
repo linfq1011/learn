@@ -33,7 +33,7 @@ public class MyContainer2<T> {
 	private Condition producer = lock.newCondition();
 	private Condition consumer = lock.newCondition();
 
-	public synchronized void put(T t) {
+	public void put(T t) {
 		try {
 			lock.lock();
 			while (list.size() == MAX) {
@@ -50,7 +50,7 @@ public class MyContainer2<T> {
 		}
 	}
 
-	public synchronized T get() {
+	public T get() {
 		T t = null;
 		try {
 			lock.lock();
