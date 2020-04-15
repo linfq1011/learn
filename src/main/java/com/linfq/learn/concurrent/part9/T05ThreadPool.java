@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
  * 线程池的概念.
  * 启动和销毁线程需要使用大量资源，线程尽量重用
  *
+ * 一个线程池包含一些线程和2个队列（等待队列和完成队列）
+ *
  * @author linfq
  * @date 2020/4/14 22:45
  */
